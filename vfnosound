@@ -1,0 +1,9 @@
+#!/bin/bash
+command=avconv
+if [ $# -eq 0 ]
+then
+  exec $command -f ogg -i pipe:  -vcodec copy -an -f ogg pipe: 
+else
+    echo $# Usage: $0 \n
+fi
+

@@ -1,0 +1,8 @@
+#!/bin/bash
+command=avconv
+if [ $# -eq 2 ]
+then
+  exec  $command  -f  ogg -i pipe: -ss  $1  -t $2  -vcodec copy  -acodec copy -f ogg pipe:
+else
+  echo "Uso: $0 <HH:MM:SS> <HH:MM:SS>|<SS>"
+fi

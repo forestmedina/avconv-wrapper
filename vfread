@@ -1,0 +1,8 @@
+#!/bin/bash
+command=avconv
+if [ $# -eq 1 ]
+then
+  exec  $command  -i $1  -vcodec copy  -acodec copy -f ogg pipe:
+else
+  echo "Uso: $0 <archivo>"
+fi
